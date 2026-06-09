@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: student-data-backend
+    runtime: node
+    plan: free
+    dir: BACKEND
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        scope: build
+      - key: NODE_ENV
+        value: production
