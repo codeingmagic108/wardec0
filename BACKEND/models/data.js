@@ -42,6 +42,10 @@ export async function initDatabase() {
     user: adminUrl.username || defaultUser,
     password: adminUrl.password || defaultPass,
     database: adminUrl.pathname.slice(1) || 'postgres',
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
   });
 
   await client.connect();
