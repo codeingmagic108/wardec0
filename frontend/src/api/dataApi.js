@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api/datapath';
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:5000/api/datapath';
 
 export async function getAllData() {
   const response = await fetch(`${API_BASE}/all`);
