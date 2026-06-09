@@ -3,6 +3,7 @@ services:
     name: student-data-backend
     runtime: node
     plan: free
+    dir: BACKEND
     buildCommand: npm install
     startCommand: npm start
     envVars:
