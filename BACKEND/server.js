@@ -21,6 +21,10 @@ app.use(express.json());
 
 const startServer = async () => {
   try {
+    const dbUrl = process.env.DATABASE_URL;
+    console.log('DATABASE_URL configured:', Boolean(dbUrl));
+    console.log('SSL mode present in DATABASE_URL:', dbUrl ? dbUrl.includes('sslmode=require') : false);
+
     await initDatabase();
     await sequelize.authenticate();
     await sequelize.sync();

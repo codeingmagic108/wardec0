@@ -10,9 +10,19 @@ const defaultName = process.env.DB_NAME || 'dheerajkumar';
 export const DATABASE_URL = process.env.DATABASE_URL ||
   `postgres://${defaultUser}:${defaultPass}@${defaultHost}:${defaultPort}/${defaultName}`;
 
+const useSsl = DATABASE_URL?.includes('sslmode=require') || process.env.NODE_ENV === 'production';
+
 export const sequelize = new Sequelize(DATABASE_URL, {
   dialect: 'postgres',
   logging: false,
+  dialectOptions: useSsl
+    ? {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
+      }
+    : {},
 });
 
 const url = new URL(DATABASE_URL);
