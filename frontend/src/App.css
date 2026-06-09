@@ -1,0 +1,288 @@
+.App {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #1f2937;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 24px;
+}
+
+.App-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.App-header p {
+  margin: 8px auto 0;
+  max-width: 640px;
+  color: #4b5563;
+}
+
+.data-page {
+  display: grid;
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.data-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.data-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.data-card h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.data-form {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.data-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.data-form input {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+.data-form button {
+  margin-top: 4px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  grid-column: span 1;
+}
+
+.data-form button:hover {
+  background: #1d4ed8;
+}
+
+@media (min-width: 720px) {
+  .data-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .data-form button {
+    grid-column: span 2;
+  }
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.data-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.data-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.data-table td:last-child {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.data-table button {
+  min-width: 80px;
+}
+
+.data-list {
+  display: grid;
+  gap: 14px;
+}
+
+.data-item {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.data-item div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.delete-button,
+.refresh-button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: #ef4444;
+  color: white;
+  font-weight: 700;
+}
+
+.refresh-button {
+  background: #2563eb;
+}
+
+.delete-button:hover,
+.refresh-button:hover {
+  opacity: 0.95;
+}
+
+.error-message {
+  color: #b91c1c;
+}
+
+/* New table styles */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.data-table thead {
+  background: linear-gradient(90deg, #f1f5f9, #fff);
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: #fbfdff;
+}
+
+.data-table td {
+  vertical-align: middle;
+}
+
+.data-table .edit-button,
+.data-table .delete-button {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.data-table .edit-button {
+  background: #06b6d4;
+  color: #04202a;
+  border: none;
+}
+
+.data-table .edit-button:hover {
+  opacity: 0.95;
+}
+
+.data-table .delete-button {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+}
+
+/* Form layout: two-column on wider screens */
+.data-form {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 720px) {
+  .data-form {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+
+  .data-form label {
+    margin-bottom: 0;
+  }
+
+  .data-form .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .data-form button {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+/* Small polish for inputs */
+.data-form input {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  background: #ffffff;
+}
+
+.data-form label {
+  color: #334155;
+  font-weight: 600;
+}
+
+.data-form button {
+  margin-top: 6px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.data-form .cancel-button {
+  background: #6b7280;
+  margin-left: 8px;
+}
